@@ -5,5 +5,5 @@ export interface PasswordFieldProps extends FieldProps {
 }
 
 export function PasswordField(props: PasswordFieldProps) {
-    return <Field {...props} type={'password'}/>
+    return <Field {...props} type={'password'}/>;
 }

@@ -1,25 +1,33 @@
 import {FieldProps as BaseFieldProps, withField} from "wbox-forms";
 import {useTheme} from "../Theme/ThemeContext";
+import {buildClassName} from "../Utils/ClassName";
+import {WithFieldProps} from "wbox-forms/dist/Field/HOCs";
 
 export interface FieldProps extends BaseFieldProps {
     inputProps?: any;
     placeholder?: string;
-    type? : string;
+    type?: string;
 }
 
-function Field(props: FieldProps) {
-    const theme = useTheme();
-    let className = props.inputProps?.className ?? '';
-    className = `${theme.inputClassName} ${className}`;
+interface Props extends FieldProps, WithFieldProps{
 
-    const otherProps = props.inputProps;
+}
+
+function Field(props: Props) {
+    //todo : handle error
+
+    const theme = useTheme();
+    const className = buildClassName(props.inputProps?.className, theme.inputClassName);
+    const inputProps = props.inputProps ?? {};
+
     return <input name={props.name}
+                  data-testid={`wbox-field-${props.name}`}
                   className={className}
                   placeholder={props.placeholder}
                   type={props.type ?? 'text'}
-                  {...otherProps}
-                  onChange={props.changeHandler}
-    />;
+                  {...inputProps}
+                  value={props.field.value}
+                  onChange={props.handleChange}/>;
 }
 
 
