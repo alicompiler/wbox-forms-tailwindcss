@@ -5,7 +5,7 @@ Elements :
 - BaseField
 - Text
 - Password
-- Dropdown
+- Select
 - Checkbox
 - RadioButton
 - TextArea
@@ -14,7 +14,16 @@ Elements :
 - DateTime
 
 
-Layout :
+Factory & Layout :
 
 Simple Layout
 KeyValue Layout
+
+
+
+
+
+
+TODO : 
+
+autoComplete prop

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {UnStyledExample} from "./__examples/UnStyledExample";
+import {AllElementsExample} from "./__examples/AllElementsExample";
 import "./tailwind.css";
 
 ReactDOM.render(
     <React.StrictMode>
         <div className={'p-8'}>
-            <UnStyledExample/>
+            <AllElementsExample/>
         </div>
     </React.StrictMode>,
     document.getElementById('root')
