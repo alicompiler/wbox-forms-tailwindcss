@@ -1,4 +1,4 @@
-import {buildClassName} from "../../Utils/ClassName";
+import {buildClassName} from "../../Utils/ClassNameBuilder";
 
 describe('ClassName Utils', () => {
 

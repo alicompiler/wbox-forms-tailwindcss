@@ -1,38 +1,36 @@
-import {FieldProps as BaseFieldProps, withField} from "wbox-forms";
+import {FieldProps} from "wbox-forms";
 import {WithOptions} from "./WithOption";
 import {WithFieldProps} from "wbox-forms/dist/Field/HOCs";
-import {useTheme} from "../Theme/ThemeContext";
-import {buildClassName} from "../Utils/ClassName";
+import {withTailwindField, WithTailwindFieldProps, WrappedFieldProps} from "../HOCs/WithTailwindField";
+import {stateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
 
-export interface SelectProps extends BaseFieldProps, WithOptions {
+export interface TailwindSelectProps extends FieldProps, WrappedFieldProps, WithOptions {
     placeholder?: string;
-    selectProps?: any;
 }
 
-interface Props extends SelectProps, WithFieldProps {
+interface Props extends TailwindSelectProps, WithFieldProps, WithTailwindFieldProps {
 
 }
 
 function SelectField(props: Props) {
-    const theme = useTheme();
-    const className = buildClassName(props.selectProps?.className, theme.inputClassName);
-    const selectProps = props.selectProps ?? {};
-
+    const {tailwindOptions} = props;
+    const {classNameBuilder, theme} = tailwindOptions;
+    let selectClassName = classNameBuilder.build(props.className, stateBasedClassNameSelector(theme.selectClassName, props.field));
+    let optionClassName = classNameBuilder.build(props.className, stateBasedClassNameSelector(theme.selectOptionClassName, props.field));
     return <select name={props.name}
-                   data-testid={`wbox-field-${props.name}`}
-                   className={className}
+                   data-testid={tailwindOptions.dataTestId}
+                   className={selectClassName}
                    placeholder={props.placeholder}
-                   {...selectProps}
+                   {...tailwindOptions.inputProps}
                    value={props.field.value}
                    onChange={props.handleChange}>
         {
             props.options.map((option, index) =>
-                <option key={index}
-                        value={option.value}>
+                <option key={index} className={optionClassName} value={option.value}>
                     {option.text}
                 </option>)
         }
     </select>
 }
 
-export default withField<SelectProps>(SelectField);
+export default withTailwindField(SelectField, "select");

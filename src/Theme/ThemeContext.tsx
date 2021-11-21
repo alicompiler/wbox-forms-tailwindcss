@@ -1,16 +1,11 @@
 import React, {useContext} from "react";
 import {unStyled} from "./UnStyledTheme";
+import {solidTheme} from "./SolidTheme";
+import {simpleTheme} from "./SimpleTheme";
+import {underlinedTheme} from "./UnderlinedTheme";
+import {Theme} from "./Theme";
 
-//todo : support coloring system
-
-export interface Theme {
-    inputClassName: string;
-    textAreaClassName: string;
-    selectClassName: string;
-    checkboxClassName: string;
-}
-
-export const ThemeContext = React.createContext<Theme>(unStyled);
+export const ThemeContext = React.createContext<Theme>(underlinedTheme);
 
 export const ThemeProvider = ThemeContext.Provider;
 

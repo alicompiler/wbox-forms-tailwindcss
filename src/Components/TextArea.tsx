@@ -1,34 +1,31 @@
-import {FieldProps as BaseFieldProps, withField} from "wbox-forms";
-import {useTheme} from "../Theme/ThemeContext";
-import {buildClassName} from "../Utils/ClassName";
+import {FieldProps} from "wbox-forms";
 import {WithFieldProps} from "wbox-forms/dist/Field/HOCs";
+import {withTailwindField, WithTailwindFieldProps, WrappedFieldProps} from "../HOCs/WithTailwindField";
+import {stateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
 
-export interface TextAreaProps extends BaseFieldProps {
-    inputProps?: any;
+export interface TailwindInputProps extends FieldProps, WrappedFieldProps {
     placeholder?: string;
-    rows? : number;
+    rows?: number;
 }
 
-interface Props extends TextAreaProps, WithFieldProps {
+interface Props extends TailwindInputProps, WithFieldProps, WithTailwindFieldProps {
 
 }
 
 function TextArea(props: Props) {
-    //todo : handle error
-
-    const theme = useTheme();
-    const className = buildClassName(props.inputProps?.className, theme.inputClassName);
-    const inputProps = props.inputProps ?? {};
-
+    const {tailwindOptions} = props;
     return <textarea name={props.name}
-                     data-testid={`wbox-field-${props.name}`}
-                     className={className}
+                     data-testid={tailwindOptions.dataTestId}
+                     className={tailwindOptions.className}
                      rows={props.rows}
                      placeholder={props.placeholder}
-                     {...inputProps}
+                     {...tailwindOptions.inputProps}
                      value={props.field.value}
                      onChange={props.handleChange}/>;
 }
 
 
-export default withField(TextArea);
+export default withTailwindField(TextArea,
+    (theme, field) => stateBasedClassNameSelector(theme.textAreaClassName, field),
+    "textarea"
+);

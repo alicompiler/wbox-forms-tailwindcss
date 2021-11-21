@@ -1,5 +1,5 @@
 import {Form} from "wbox-forms";
-import Field from "../Components/Field";
+import Field from "../Components/TextField";
 import {PasswordField} from "../Components/PasswordField";
 import SelectField from "../Components/SelectField";
 import Checkbox from "../Components/Checkbox";

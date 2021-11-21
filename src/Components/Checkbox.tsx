@@ -1,12 +1,13 @@
-import {checkboxValueSelector, FieldProps as BaseFieldProps, withField} from "wbox-forms";
+import {checkboxValueSelector, FieldProps} from "wbox-forms";
 import {WithFieldProps} from "wbox-forms/dist/Field/HOCs";
-import {buildClassName} from "../Utils/ClassName";
-import {useTheme} from "../Theme/ThemeContext";
-import {defaultInitializeFunc} from "wbox-forms/dist/Field/Helpers";
+import {ChoiceBoxBase, Orientation} from "./ChoiceBoxBase";
+import {withTailwindField, WithTailwindFieldProps} from "../HOCs/WithTailwindField";
+import {useDefaults} from "../Defaults/DefaultsContext";
 
-export interface CheckboxProps extends BaseFieldProps {
-    label?: string;
-    inputProps?: any;
+
+export interface CheckboxProps extends FieldProps, WithTailwindFieldProps {
+    text?: string;
+    orientation?: Orientation;
 }
 
 interface Props extends CheckboxProps, WithFieldProps {
@@ -14,26 +15,20 @@ interface Props extends CheckboxProps, WithFieldProps {
 }
 
 function Checkbox(props: Props) {
-    const theme = useTheme();
-    const className = buildClassName(props.inputProps?.className, theme.checkboxClassName);
-    const inputProps = props.inputProps ?? {};
-    //todo : move to theme
-    return <div className={'flex items-center mt-1'}>
-        <input type={'checkbox'}
-               id={`wbox-field-${props.name}`}
-               name={props.name}
-               className={className}
-               {...inputProps}
-               value={props.field.value}
-               onChange={props.handleChange}/>
-        {
-            props.label &&
-            <>
-                <span className={'inline-block w-2'}/>
-                <label htmlFor={`wbox-field-${props.name}`} className={className}>{props.label}</label>
-            </>
-        }
-    </div>
+    const {tailwindOptions} = props;
+    const defaults = useDefaults();
+    const orientation = props.orientation ?? defaults.checkboxOrientation;
+    return <ChoiceBoxBase name={props.name}
+                          dataTestId={tailwindOptions.dataTestId}
+                          type={tailwindOptions.type as any}
+                          classNames={tailwindOptions.theme.checkboxClassName}
+                          classNameBuilder={tailwindOptions.classNameBuilder}
+                          orientation={orientation}
+                          field={props.field}
+                          checked={props.field.value}
+                          value={props.field.value}
+                          handleChange={props.handleChange}
+                          text={props.text ?? ''}/>
 }
 
-export default withField(Checkbox, defaultInitializeFunc, {valueSelector: checkboxValueSelector});
+export default withTailwindField(Checkbox, "checkbox", {valueSelector: checkboxValueSelector});
