@@ -16,7 +16,7 @@ function TextArea(props: Props) {
     const {tailwindOptions} = props;
     return <textarea name={props.name}
                      data-testid={tailwindOptions.dataTestId}
-                     className={tailwindOptions.className}
+                     className={tailwindOptions.classNameBuilder.build(props.className, stateBasedClassNameSelector(tailwindOptions.theme.textAreaClassName, props.field))}
                      rows={props.rows}
                      placeholder={props.placeholder}
                      {...tailwindOptions.inputProps}
@@ -26,6 +26,5 @@ function TextArea(props: Props) {
 
 
 export default withTailwindField(TextArea,
-    (theme, field) => stateBasedClassNameSelector(theme.textAreaClassName, field),
     "textarea"
 );

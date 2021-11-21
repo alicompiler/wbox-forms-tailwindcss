@@ -1,8 +1,8 @@
-import {FieldProps as BaseFieldProps, withField} from "wbox-forms";
+import {FieldProps as BaseFieldProps} from "wbox-forms";
 import {WithFieldProps} from "wbox-forms/dist/Field/HOCs";
 import {WithOptions} from "./WithOption";
 import {ChoiceBoxBase, Orientation} from "./ChoiceBoxBase";
-import {WithTailwindFieldProps} from "../HOCs/WithTailwindField";
+import {withTailwindField, WithTailwindFieldProps} from "../HOCs/WithTailwindField";
 import {useDefaults} from "../Defaults/DefaultsContext";
 import {orientedWithStateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
 
@@ -39,4 +39,4 @@ function RadioButton(props: Props) {
     </div>
 }
 
-export default withField(RadioButton);
+export default withTailwindField(RadioButton);
