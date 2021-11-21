@@ -8,7 +8,7 @@ export interface Theme {
 }
 
 export interface ChoiceBoxClassName {
-    wrapper: OrientedClassName<StateBasedClassName>;
+    wrapper: StateBasedClassName;
     label: OrientedClassName<StateBasedClassName>;
     input: OrientedClassName<StateBasedClassName>;
     space: OrientedClassName<StateBasedClassName>;

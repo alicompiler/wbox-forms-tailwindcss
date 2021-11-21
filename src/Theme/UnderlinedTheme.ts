@@ -19,14 +19,8 @@ export const underlinedTheme: Theme = {
     },
     checkboxClassName: {
         wrapper: {
-            vertical: {
-                normal: 'mt-2',
-                error: 'mt-2',
-            },
-            horizontal: {
-                normal: 'mt-2',
-                error: 'mt-2'
-            }
+            normal: 'mt-2',
+            error: 'mt-2'
         },
         label: {
             horizontal: {
@@ -65,14 +59,8 @@ export const underlinedTheme: Theme = {
     },
     radio: {
         wrapper: {
-            vertical: {
-                normal: 'mt-2',
-                error: 'mt-2',
-            },
-            horizontal: {
-                normal: 'mt-2',
-                error: 'mt-2'
-            }
+            normal: 'mt-2',
+            error: 'mt-2'
         },
         label: {
             horizontal: {

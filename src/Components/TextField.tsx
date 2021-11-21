@@ -25,22 +25,12 @@ export function TailwindInputField(props: Props) {
                   onChange={props.handleChange}/>;
 }
 
+export const TextField = withTailwindField(TailwindInputField);
 
-export const TextField = withTailwindField(TailwindInputField,
-);
+export const PasswordField = withTailwindField(TailwindInputField, "password");
 
-export const PasswordField = withTailwindField(TailwindInputField,
-    "password"
-);
+export const TimeField = withTailwindField(TailwindInputField, "time");
 
-export const TimeField = withTailwindField(TailwindInputField,
-    "time"
-);
+export const DateField = withTailwindField(TailwindInputField, "date");
 
-export const DateField = withTailwindField(TailwindInputField,
-    "date"
-);
-
-export const DateTimeField = withTailwindField(TailwindInputField,
-    "datetime-local"
-);
+export const DateTimeField = withTailwindField(TailwindInputField, "datetime-local");

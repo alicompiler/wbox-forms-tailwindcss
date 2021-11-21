@@ -4,7 +4,7 @@ import {WithOptions} from "./WithOption";
 import {ChoiceBoxBase, Orientation} from "./ChoiceBoxBase";
 import {withTailwindField, WithTailwindFieldProps} from "../HOCs/WithTailwindField";
 import {useDefaults} from "../Defaults/DefaultsContext";
-import {orientedWithStateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
+import {stateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
 
 export interface RadioButtonProps extends BaseFieldProps, WithOptions, WithTailwindFieldProps {
     orientation?: Orientation;
@@ -18,7 +18,7 @@ function RadioButton(props: Props) {
     const {tailwindOptions} = props;
     const defaults = useDefaults();
     const orientation: Orientation = props.orientation ?? defaults.radioButtonOrientation;
-    const wrapperClassName = tailwindOptions.classNameBuilder.build(undefined, orientedWithStateBasedClassNameSelector(tailwindOptions.theme.radio.wrapper, orientation, props.field));
+    const wrapperClassName = tailwindOptions.classNameBuilder.build(undefined, stateBasedClassNameSelector(tailwindOptions.theme.radio.wrapper, props.field));
     return <div className={wrapperClassName}>
         {
             props.options.map((option, index) =>

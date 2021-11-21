@@ -1,33 +1,27 @@
 import {Theme} from "./Theme";
 
+const generalNormalClasses = "mt-1 block w-full";
+const generalErrorClasses = "mt-1 block text-error-500 bg-error-200 border-error-500 w-full";
+
 export const unStyled: Theme = {
     inputClassName: {
-        normal: 'mt-1 block w-full',
-        error: 'mt-1 block text-error border-error w-full'
+        normal: generalNormalClasses,
+        error: generalErrorClasses
     },
     selectClassName: {
-        normal: 'mt-1 block w-full',
-        error: 'mt-1 block text-error border-error w-full'
+        normal: generalNormalClasses,
+        error: generalErrorClasses
     },
     selectOptionClassName: {
-        normal: 'mt-1 block w-full',
-        error: 'mt-1 block text-error border-error w-full'
+        normal: generalNormalClasses,
+        error: generalErrorClasses
     },
     textAreaClassName: {
-        normal: 'mt-1 block w-full',
-        error: 'mt-1 block text-error border-error w-full'
+        normal: generalNormalClasses,
+        error: generalErrorClasses
     },
     checkboxClassName: {
-        wrapper: {
-            vertical: {
-                normal: 'mt-2',
-                error: 'mt-2',
-            },
-            horizontal: {
-                normal: 'mt-2',
-                error: 'mt-2'
-            }
-        },
+        wrapper: {normal: 'mt-2', error: 'mt-2'},
         label: {
             horizontal: {
                 normal: 'inline-flex items-center',
@@ -39,41 +33,17 @@ export const unStyled: Theme = {
             }
         },
         input: {
-            horizontal: {
-                normal: 'text-primary',
-                error: 'text-error',
-            },
-            vertical: {
-                normal: 'text-primary',
-                error: 'text-error'
-            }
+            horizontal: {normal: '', error: 'text-error-500'},
+            vertical: {normal: '', error: 'text-error-500'}
         },
         space: {
-            vertical: {
-                normal: 'w-1',
-                error: 'w-1'
-            },
-            horizontal: {
-                normal: 'w-1',
-                error: 'w-1'
-            }
+            vertical: {normal: 'w-1', error: 'w-1'},
+            horizontal: {normal: 'w-1', error: 'w-1'}
         },
-        optionText: {
-            normal: '',
-            error: 'text-error'
-        }
+        optionText: {normal: '', error: 'text-error-500'}
     },
     radio: {
-        wrapper: {
-            vertical: {
-                normal: 'mt-2',
-                error: 'mt-2',
-            },
-            horizontal: {
-                normal: 'mt-2',
-                error: 'mt-2'
-            }
-        },
+        wrapper: {normal: 'mt-2', error: 'mt-2'},
         label: {
             horizontal: {
                 normal: 'inline-flex items-center',
@@ -85,28 +55,13 @@ export const unStyled: Theme = {
             }
         },
         input: {
-            horizontal: {
-                normal: 'text-primary',
-                error: 'text-error',
-            },
-            vertical: {
-                normal: 'text-primary',
-                error: 'text-error'
-            }
+            horizontal: {normal: '', error: 'text-error-500'},
+            vertical: {normal: '', error: 'text-error-500'}
         },
         space: {
-            vertical: {
-                normal: 'w-1',
-                error: 'w-1'
-            },
-            horizontal: {
-                normal: 'w-1',
-                error: 'w-1'
-            }
+            vertical: {normal: 'w-1', error: 'w-1'},
+            horizontal: {normal: 'w-1', error: 'w-1'}
         },
-        optionText: {
-            normal: '',
-            error: 'text-error'
-        }
+        optionText: {normal: '', error: 'text-error-500'}
     }
 }
