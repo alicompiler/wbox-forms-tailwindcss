@@ -1,5 +1,7 @@
 import {Theme} from "./Theme";
 
+//todo: support for dark mode
+
 export const underlinedTheme: Theme = {
     inputClassName: {
         normal: 'mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black',
