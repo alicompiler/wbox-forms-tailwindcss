@@ -10,7 +10,9 @@ export interface ClassNameBuilder {
 }
 
 export class DefaultClassNameBuilder implements ClassNameBuilder {
-    public static TAILWIND_FIELD_CLASS_NAME_SUFFIX : string = "__wbox-forms-field-tailwind";
+
+    public static TAILWIND_FIELD_CLASS_NAME_SUFFIX: string = "__wbox-forms-tailwind-field";
+
     build(className: ClassName, baseClassName: string): string {
         if (typeof className === "function") {
             return `${className(baseClassName)} ${DefaultClassNameBuilder.TAILWIND_FIELD_CLASS_NAME_SUFFIX}`;
