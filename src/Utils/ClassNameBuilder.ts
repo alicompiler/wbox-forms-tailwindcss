@@ -10,14 +10,15 @@ export interface ClassNameBuilder {
 }
 
 export class DefaultClassNameBuilder implements ClassNameBuilder {
+    public static TAILWIND_FIELD_CLASS_NAME : string = "__wbox-forms-field-tailwind";
     build(className: ClassName, baseClassName: string): string {
         if (typeof className === "function") {
-            return className(baseClassName);
+            return `${className(baseClassName)} ${DefaultClassNameBuilder.TAILWIND_FIELD_CLASS_NAME}`;
         }
         if (className === undefined || className === null || className === "") {
-            return baseClassName;
+            return `${baseClassName} ${DefaultClassNameBuilder.TAILWIND_FIELD_CLASS_NAME}`;
         }
-        return `${baseClassName} ${className}`;
+        return `${baseClassName} ${className} ${DefaultClassNameBuilder.TAILWIND_FIELD_CLASS_NAME}`;
     }
 }
 
