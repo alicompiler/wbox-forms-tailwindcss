@@ -11,7 +11,7 @@ const choiceBoxClassName: ChoiceBoxClassName = {
     },
     input: {
         horizontal: {
-            normal: 'rounded bg-gray-200 border-transparent text-white dark:text-black focus:ring-1 focus:ring-offset-2 focus:ring-gray-500',
+            normal: 'rounded bg-gray-200 border-transparent dark:text-black focus:ring-1 focus:ring-offset-2 focus:ring-gray-500',
             error: 'rounded bg-error-200 border-transparent text-error-500 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500'
         },
         vertical: {

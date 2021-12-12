@@ -8,7 +8,7 @@ export interface Defaults {
 
 const defaults: Defaults = {
     checkboxOrientation: 'horizontal',
-    radioButtonOrientation: 'vertical'
+    radioButtonOrientation: 'horizontal'
 }
 
 export const DefaultsContext = React.createContext<Defaults>(defaults);
