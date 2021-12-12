@@ -19,7 +19,7 @@ const choiceBoxClassName: ChoiceBoxClassName = {
         vertical: {normal: 'w-1', error: 'w-1'},
         horizontal: {normal: 'w-1', error: 'w-1'}
     },
-    optionText: {normal: '', error: 'text-error-500'}
+    optionText: {normal: 'dark:text-white', error: 'text-error-500'}
 }
 
 export const unStyledTheme: Theme = {

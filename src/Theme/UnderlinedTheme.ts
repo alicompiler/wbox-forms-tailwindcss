@@ -3,8 +3,6 @@ import {ChoiceBoxClassName, Theme} from "./Theme";
 const generalNormalClassName = "mt-0 dark:text-white bg-transparent block w-full px-0.5 border-0 border-b-2 border-gray-200 dark:border-gray-600 focus:ring-0 focus:border-black dark:focus:border-white";
 const generalErrorClassName = "mt-0 text-error-500 bg-transparent block w-full px-0.5 border-0 border-b-2 border-gray-200 dark:border-gray-600 focus:ring-0 focus:border-black dark:focus:border-white";
 
-
-//todo: improve choice box dark/light mode styling
 const choiceBoxClassName: ChoiceBoxClassName = {
     wrapper: {normal: 'mt-2', error: 'mt-2'},
     label: {
