@@ -1,6 +1,6 @@
 import {ChoiceBoxClassName, Theme} from "./Theme";
 
-const generalNormalClassName = "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:ring-0";
+const generalNormalClassName = "mt-1 block w-full rounded-md bg-gray-200 border-transparent focus:border-gray-500 focus:ring-0";
 const generalErrorClassName = "mt-1 block w-full rounded-md bg-error-200 border-transparent focus:border-gray-500 focus:ring-0";
 
 const choiceBoxClassName: ChoiceBoxClassName = {

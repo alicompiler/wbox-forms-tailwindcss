@@ -5,7 +5,7 @@ import "./tailwind.css";
 
 ReactDOM.render(
     <React.StrictMode>
-        <div className={'p-8 dark'} style={{background: '#2b2b2b'}}>
+        <div className={'p-8'} style={{background: '#FFF'}}>
             <AllElementsExample/>
         </div>
     </React.StrictMode>,
