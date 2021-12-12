@@ -5,7 +5,7 @@ import {simpleTheme} from "./SimpleTheme";
 import {underlinedTheme} from "./UnderlinedTheme";
 import {Theme} from "./Theme";
 
-export const ThemeContext = React.createContext<Theme>(simpleTheme);
+export const ThemeContext = React.createContext<Theme>(underlinedTheme);
 
 export const ThemeProvider = ThemeContext.Provider;
 
