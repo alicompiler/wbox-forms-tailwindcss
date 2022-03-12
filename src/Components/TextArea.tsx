@@ -25,6 +25,4 @@ function TextArea(props: Props) {
 }
 
 
-export default withTailwindField(TextArea,
-    "textarea"
-);
+export default withTailwindField(TextArea, "textarea");
