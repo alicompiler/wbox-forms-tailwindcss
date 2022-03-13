@@ -18,6 +18,7 @@ TODO:
 
 * Simple Form Factory
 * Key Value Form Factory
+* Fields Order
 * Code Cleanup
 * Example Cleanup
 * Test Cleanup

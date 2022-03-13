@@ -1,7 +1,8 @@
 import {SimpleFormFactory} from "../Factories/SimpleFormFactory";
+import {TableLayoutFormFactory} from "../Factories/TableLayoutFormFactory";
 
 export function SimpleFormFactoryExample() {
-    const factory = new SimpleFormFactory();
+    const factory = new TableLayoutFormFactory();
     return factory.create({
         formConfig: {},
         fieldConfig: {
