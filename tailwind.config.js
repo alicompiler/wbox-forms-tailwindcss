@@ -9,7 +9,7 @@ module.exports = {
       secondary : colors.green,
       error : colors.red,
       warning : colors.amber,
-      transparent: '#0000'
+      transparent: '#0000',
     },
     extend: {},
   },

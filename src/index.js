@@ -7,6 +7,7 @@ import {unStyledTheme} from "./Theme/UnStyledTheme";
 import {simpleTheme} from "./Theme/SimpleTheme";
 import {underlinedTheme} from "./Theme/UnderlinedTheme";
 import {solidTheme} from "./Theme/SolidTheme";
+import {SimpleFormFactoryExample} from "./__examples/SimpleFormFactoryExample";
 
 ReactDOM.render(
     <React.StrictMode>
@@ -57,6 +58,8 @@ function App() {
         <br/><br/><br/><br/>
         <ThemeProvider value={theme}>
             <AllElementsExample/>
+            <br/><br/><hr/><br/><br/>
+            <SimpleFormFactoryExample />
         </ThemeProvider>
     </div>;
 }

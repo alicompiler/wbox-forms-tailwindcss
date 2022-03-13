@@ -5,6 +5,8 @@ export interface Theme {
     selectClassName: StateBasedClassName;
     checkboxClassName: ChoiceBoxClassName;
     radio: ChoiceBoxClassName;
+    label: string;
+    button: string;
 }
 
 export interface ChoiceBoxClassName {

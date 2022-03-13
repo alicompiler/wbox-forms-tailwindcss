@@ -33,7 +33,9 @@ export const solidTheme: Theme = {
     selectOptionClassName: {normal: generalNormalClassName, error: generalErrorClassName},
     textAreaClassName: {normal: generalNormalClassName, error: generalErrorClassName},
     checkboxClassName: choiceBoxClassName,
-    radio: choiceBoxClassName
+    radio: choiceBoxClassName,
+    label: '',
+    button: 'px-4 py-2 bg-primary-500 rounded text-white cursor-pointer'
 }
 
 

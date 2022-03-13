@@ -40,5 +40,7 @@ export const unStyledTheme: Theme = {
         error: generalErrorClasses
     },
     checkboxClassName: choiceBoxClassName,
-    radio: choiceBoxClassName
+    radio: choiceBoxClassName,
+    label: '',
+    button: 'px-4 py-2 border border-primary-500 text-primary-500 cursor-pointer'
 }

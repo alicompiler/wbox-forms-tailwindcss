@@ -32,5 +32,7 @@ export const underlinedTheme: Theme = {
     selectOptionClassName: {normal: generalNormalClassName, error: generalErrorClassName},
     textAreaClassName: {normal: generalNormalClassName, error: generalErrorClassName},
     checkboxClassName: choiceBoxClassName,
-    radio: choiceBoxClassName
+    radio: choiceBoxClassName,
+    label: '',
+    button: 'px-4 py-2 text-primary-500 cursor-pointer'
 }
