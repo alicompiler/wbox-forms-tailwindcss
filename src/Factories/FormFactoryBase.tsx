@@ -3,7 +3,7 @@ import {FieldProps, FieldTypeMap, Form, FormConfiguration} from "wbox-forms";
 import {ClassName, ClassNameBuilder} from "../Utils/ClassNameBuilder";
 import {fieldsMap} from "./FieldsMap";
 import React, {Fragment, ReactElement} from "react";
-import {ButtonPosition, LayoutButton} from "./Components/Button";
+import {ButtonPosition, LayoutButton} from "./Components/LayoutButton";
 
 export type FieldConfig = FieldProps & { label: string, labelClassName?: ClassName };
 

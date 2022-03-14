@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Orientation} from "../Components/ChoiceBoxBase";
-import {ButtonPosition} from "../Factories/Components/Button";
+import {ButtonPosition} from "../Factories/Components/LayoutButton";
 import {ClassNameBuilder, DefaultClassNameBuilder} from "../Utils/ClassNameBuilder";
 import {LabelAlignment} from "../Factories/TableLayoutFormFactory";
 
