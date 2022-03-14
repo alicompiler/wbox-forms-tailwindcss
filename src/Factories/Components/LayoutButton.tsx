@@ -22,7 +22,7 @@ export function LayoutButton(props: Props) {
     const buttonClassName = classNameBuilder.build(props.className, theme.button);
     const additionalClassName = position === "fullwidth" ? "w-full" : "";
     const className = `${buttonClassName} ${additionalClassName}`;
-    return <div className={`flex p-2 ${justify}`}>
+    return <div className={`flex p-2 ${justify} __wbox-tailwind-button-wrapper`}>
         <Button render={serviceFactory => <InnerButton serviceFactory={serviceFactory}
                                                        className={className}
                                                        text={props.text}/>}

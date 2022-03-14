@@ -15,7 +15,7 @@ export function SimpleFieldWrapper(props: Props) {
     const theme = useTheme();
     const classNameBuilder: ClassNameBuilder = props.classNameBuilder ?? defaults.classNameBuilder();
     const labelClassName = classNameBuilder.build(props.labelClassName, theme.label);
-    return <div className={'__wbox-tailwind-simple-field-wrapper py-2'}>
+    return <div className={'__wbox-tailwind-simple-layout-field-wrapper py-2'}>
         <label className={labelClassName}>
             {props.label}
             {props.field}

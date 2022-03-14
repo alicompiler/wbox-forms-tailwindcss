@@ -24,7 +24,7 @@ export function TableRowFieldWrapper(props: Props) {
     const spaceWidth = props.spaceWidth ?? defaults.layout.table.spaceWidth;
     const labelWidth = props.labelWidth ?? defaults.layout.table.labelWidth;
     return <Fragment>
-        <div className={'__wbox-tailwind-simple-field-wrapper py-2 flex'}>
+        <div className={'py-2 flex __wbox-tailwind-table-layout-field-wrapper'}>
             <div className={`flex items-${labelAlignment}`}>
                 <label className={labelClassName} style={{width: labelWidth}}>
                     {props.label}

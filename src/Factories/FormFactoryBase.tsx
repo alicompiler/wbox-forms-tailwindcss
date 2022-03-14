@@ -7,15 +7,15 @@ import {ButtonPosition, LayoutButton} from "./Components/LayoutButton";
 
 export type FieldConfig = FieldProps & { label: string, labelClassName?: ClassName };
 
+export interface ExtraOptionsBase {
+    button: ButtonOptions;
+    classNameBuilder?: ClassNameBuilder;
+}
+
 export interface ButtonOptions {
     text: string;
     position?: ButtonPosition;
     className?: ClassName;
-}
-
-export interface ExtraOptionsBase {
-    button: ButtonOptions;
-    classNameBuilder?: ClassNameBuilder;
 }
 
 export abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> implements FormFactory<FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>> {
