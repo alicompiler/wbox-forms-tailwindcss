@@ -1,6 +1,6 @@
 import {configure} from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import Field from "../../Components/TextField";
+import {TextField as Field} from "../../Components/TextField";
 import {Form} from "wbox-forms";
 import {render, screen} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";

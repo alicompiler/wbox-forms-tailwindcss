@@ -22,7 +22,8 @@ export function LayoutButton(props: Props) {
     const buttonClassName = classNameBuilder.build(props.className, theme.button);
     const additionalClassName = position === "fullwidth" ? "w-full" : "";
     const className = `${buttonClassName} ${additionalClassName}`;
-    return <div className={`flex p-2 ${justify} __wbox-tailwind-button-wrapper`}>
+    return <div data-testid={'wbox-layout-button-wrapper'}
+                className={`flex p-2 ${justify} __wbox-tailwind-button-wrapper`}>
         <Button render={serviceFactory => <InnerButton serviceFactory={serviceFactory}
                                                        className={className}
                                                        text={props.text}/>}
@@ -40,7 +41,7 @@ function InnerButton({
         const submit = serviceFactory.createSubmitService();
         await submit.submit();
     }, [serviceFactory]);
-    return <button onClick={onClick} className={className}>
+    return <button data-testid={'wbox-layout-button'} onClick={onClick} className={className}>
         {text}
     </button>
 }

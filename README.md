@@ -18,9 +18,11 @@ TODO:
 X Simple Form Factory
 X Key Value Form Factory
 X Fields Order
-* Code Cleanup
-* Example Cleanup
-* Test Cleanup
+X Code Cleanup
+X Example Cleanup
+* Test New Code
+* All Code Cleanup Round
+* Tests Cleanup
 * Export Components
 * Documentation
 * Simple Documentation In README.md
