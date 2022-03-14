@@ -4,9 +4,11 @@ import {ClassName, ClassNameBuilder, DefaultClassNameBuilder} from "../Utils/Cla
 import {fieldsMap} from "./FieldsMap";
 import React, {Fragment, useCallback} from "react";
 import {useTheme} from "../Theme/ThemeContext";
-import {SimpleFieldWrapper} from "./Components/SimpleFieldWrapper";
+import {TableRowFieldWrapper} from "./Components/TableRowFieldWrapper";
 
 type FieldConfig = FieldProps & { label: string, labelClassName?: ClassName };
+
+//TODO : MOVE DEFAULTS TO DEFAULT CONTEXT
 
 type ButtonConfig = {
     text: string;
@@ -16,7 +18,11 @@ type ButtonConfig = {
 type ExtraConfig = {
     classNameBuilder?: ClassNameBuilder;
     button: ButtonConfig;
-    order? : string[];
+    order?: string[];
+    showDivider?: boolean;
+    spaceWidth?: number;
+    labelAlignment?: "center" | "end" | "start";
+    labelWidth: number;
 }
 
 export class TableLayoutFormFactory implements FormFactory<FormConfiguration<FieldTypeMap, FieldConfig, ExtraConfig>> {
@@ -52,7 +58,7 @@ export class TableLayoutFormFactory implements FormFactory<FormConfiguration<Fie
 
     protected renderFields(configuration: FormConfiguration<FieldTypeMap, FieldConfig, ExtraConfig>): React.ReactElement | React.ReactElement[] {
         const fields = configuration.fieldConfig;
-        const keys = this.getKeysInOrder(Object.keys(fields) , configuration.extraOptions?.order);
+        const keys = this.getKeysInOrder(Object.keys(fields), configuration.extraOptions?.order);
         return keys.map((key, index) => {
             const fieldProps = fields[key].fieldConfig;
             const type = fields[key].type;
@@ -60,24 +66,29 @@ export class TableLayoutFormFactory implements FormFactory<FormConfiguration<Fie
             const theme = useTheme();
             const labelClassName = classNameBuilder.build(fieldProps.labelClassName, theme.label);
             const isLastField = index === keys.length - 1;
+            const labelAlignment = configuration.extraOptions?.labelAlignment ?? "start";
+            const defaultSpaceWidth = 16;
             return <Fragment key={index}>
-                <SimpleFieldWrapper field={this.getFieldElement(type, fieldProps)}
-                                    labelClassName={labelClassName}
-                                    label={fieldProps.label}/>
+                <TableRowFieldWrapper field={this.getFieldElement(type, fieldProps)}
+                                      width={configuration.extraOptions!.labelWidth}
+                                      position={labelAlignment}
+                                      space={configuration.extraOptions?.spaceWidth ?? defaultSpaceWidth}
+                                      labelClassName={labelClassName}
+                                      label={fieldProps.label}/>
                 {
-                    !isLastField && <hr />
+                    (configuration.extraOptions?.showDivider && !isLastField) && <hr/>
                 }
             </Fragment>;
         });
     }
 
-    protected getKeysInOrder(keys : string[] , order?:string[]) : string[] {
-        if(!order){
+    protected getKeysInOrder(keys: string[], order?: string[]): string[] {
+        if (!order) {
             return keys;
         }
-        const result : string[] = [];
+        const result: string[] = [];
         for (const item of order) {
-            if (result.includes(item)){
+            if (result.includes(item)) {
                 throw new Error(`duplicated entry in order array(${item})`);
             }
             if (!keys.includes(item)) {
@@ -86,7 +97,7 @@ export class TableLayoutFormFactory implements FormFactory<FormConfiguration<Fie
             result.push(item);
         }
         for (const item of keys) {
-            if (result.includes(item)){
+            if (result.includes(item)) {
                 continue;
             }
             result.push(item);

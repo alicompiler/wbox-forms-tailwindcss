@@ -1,4 +1,3 @@
-import {SimpleFormFactory} from "../Factories/SimpleFormFactory";
 import {TableLayoutFormFactory} from "../Factories/TableLayoutFormFactory";
 
 export function SimpleFormFactoryExample() {
@@ -19,9 +18,32 @@ export function SimpleFormFactoryExample() {
                     name: 'password',
                     label: 'Password',
                 }
+            },
+            email: {
+                type: 'text',
+                fieldConfig: {
+                    name: 'email',
+                    label: 'Password',
+                }
+            },
+            phone: {
+                type: 'text',
+                fieldConfig: {
+                    name: 'phone',
+                    label: 'Password',
+                }
+            },
+            date: {
+                type: 'date',
+                fieldConfig: {
+                    name: 'date',
+                    label: 'Password',
+                }
             }
         },
         extraOptions: {
+            labelWidth: 120,
+            labelAlignment: 'center',
             button: {
                 text: 'LOGIN'
             }
