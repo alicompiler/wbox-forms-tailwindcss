@@ -2,7 +2,6 @@
 
 Elements :
 
-- BaseField
 - Text
 - Password
 - Select
@@ -16,9 +15,9 @@ Elements :
 
 TODO: 
 
-* Simple Form Factory
-* Key Value Form Factory
-* Fields Order
+X Simple Form Factory
+X Key Value Form Factory
+X Fields Order
 * Code Cleanup
 * Example Cleanup
 * Test Cleanup
