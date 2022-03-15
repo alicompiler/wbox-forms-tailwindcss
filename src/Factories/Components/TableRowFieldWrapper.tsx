@@ -7,13 +7,18 @@ import {Fragment} from "react";
 interface Props {
     field: any,
     label: string,
-    labelClassName: ClassName,
+    labelClassName?: ClassName,
     labelWidth?: number,
     labelAlignment?: LabelAlignment;
     spaceWidth?: number;
     displayDivider?: boolean;
     classNameBuilder?: ClassNameBuilder;
 }
+
+export const DATA_TEST_ID_TABLE_ROW_FIELD_WRAPPER_SPACE = "wbox-table-row-field-wrapper-space";
+export const DATA_TEST_ID_TABLE_ROW_LABEL = "wbox-table-row-label";
+export const DATA_TEST_ID_TABLE_ROW_LABEL_WRAPPER = "wbox-table-row-label-wrapper";
+export const DATA_TEST_ID_TABLE_ROW_DIVIDER = "wbox-table-row-divider";
 
 export function TableRowFieldWrapper(props: Props) {
     const defaults = useDefaults();
@@ -25,17 +30,19 @@ export function TableRowFieldWrapper(props: Props) {
     const labelWidth = props.labelWidth ?? defaults.layout.table.labelWidth;
     return <Fragment>
         <div className={'py-2 flex __wbox-tailwind-table-layout-field-wrapper'}>
-            <div className={`flex items-${labelAlignment}`}>
-                <label className={labelClassName} style={{width: labelWidth}}>
+            <div data-testid={DATA_TEST_ID_TABLE_ROW_LABEL_WRAPPER} className={`flex items-${labelAlignment}`}>
+                <label data-testid={DATA_TEST_ID_TABLE_ROW_LABEL} className={labelClassName}
+                       style={{width: labelWidth}}>
                     {props.label}
                 </label>
             </div>
-            <div className={'inline-block'} style={{width: spaceWidth}}/>
+            <div data-testid={DATA_TEST_ID_TABLE_ROW_FIELD_WRAPPER_SPACE} className={'inline-block'}
+                 style={{width: spaceWidth}}/>
             {props.field}
         </div>
         {
             props.displayDivider &&
-            <div className={'py-2'}>
+            <div data-testid={DATA_TEST_ID_TABLE_ROW_DIVIDER} className={'py-2'}>
                 <hr/>
             </div>
         }

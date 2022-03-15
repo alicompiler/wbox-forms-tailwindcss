@@ -15,9 +15,11 @@ describe('SimpleFieldWrapper', () => {
                                 labelClassName={'test-class-name'}
                                 classNameBuilder={classNameBuilderMock}/>
         </Form>);
+        const field = screen.getByTestId('field') as HTMLElement;
         const label = screen.getByTestId(DATA_TEST_ID_SIMPLE_FIELD_LABEL) as HTMLElement;
         expect(label.textContent).toContain('test label');
         expect(label.className).toEqual("mocked-class-name");
+        expect(field.textContent).toEqual('Test');
         expect(classNameBuilderMock.build).toBeCalledWith('test-class-name', expect.anything());
     });
 

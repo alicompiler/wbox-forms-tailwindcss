@@ -13,6 +13,9 @@ interface Props {
     className?: ClassName;
 }
 
+export const DATA_TEST_ID_LAYOUT_BUTTON_WRAPPER = "wbox-layout-button-wrapper";
+export const DATA_TEST_ID_LAYOUT_BUTTON = "wbox-layout-button";
+
 export function LayoutButton(props: Props) {
     const defaults = useDefaults();
     const classNameBuilder = props.classNameBuilder ?? defaults.classNameBuilder();
@@ -22,7 +25,7 @@ export function LayoutButton(props: Props) {
     const buttonClassName = classNameBuilder.build(props.className, theme.button);
     const additionalClassName = position === "fullwidth" ? "w-full" : "";
     const className = `${buttonClassName} ${additionalClassName}`;
-    return <div data-testid={'wbox-layout-button-wrapper'}
+    return <div data-testid={DATA_TEST_ID_LAYOUT_BUTTON_WRAPPER}
                 className={`flex p-2 ${justify} __wbox-tailwind-button-wrapper`}>
         <Button render={serviceFactory => <InnerButton serviceFactory={serviceFactory}
                                                        className={className}
@@ -41,7 +44,7 @@ function InnerButton({
         const submit = serviceFactory.createSubmitService();
         await submit.submit();
     }, [serviceFactory]);
-    return <button data-testid={'wbox-layout-button'} onClick={onClick} className={className}>
+    return <button data-testid={DATA_TEST_ID_LAYOUT_BUTTON} onClick={onClick} className={className}>
         {text}
     </button>
 }
