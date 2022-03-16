@@ -7,13 +7,11 @@ import {DateField, DateTimeField, PasswordField, TextField, TimeField} from "../
 
 class CheckValidator implements FieldValidator {
     validate(value: any, rules: any): boolean {
-        console.log('validate', value);
         return value === true;
     }
 }
 
 const checkValidator = () => {
-    console.log('callback function');
     return new CheckValidator();
 };
 
