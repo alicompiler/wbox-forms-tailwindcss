@@ -15,8 +15,6 @@ Elements :
 TODO:
 
 
-* Tests Cleanup
-* Export Components
 * Documentation
 * Simple Documentation In README.md
 * Prepare To Deploy
