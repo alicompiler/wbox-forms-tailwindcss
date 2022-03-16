@@ -58,8 +58,10 @@ function App() {
         <br/><br/><br/><br/>
         <ThemeProvider value={theme}>
             <AllElementsExample/>
-            <br/><br/><hr/><br/><br/>
-            <LayoutExample />
+            <br/><br/>
+            <hr/>
+            <br/><br/>
+            <LayoutExample/>
         </ThemeProvider>
     </div>;
 }

@@ -12,15 +12,10 @@ Elements :
 - Time
 - DateTime
 
+TODO:
 
-TODO: 
+X Simple Form Factory X Key Value Form Factory X Fields Order X Code Cleanup X Example Cleanup X Test New Code
 
-X Simple Form Factory
-X Key Value Form Factory
-X Fields Order
-X Code Cleanup
-X Example Cleanup
-X Test New Code
 * All Code Cleanup Round
 * Tests Cleanup
 * Export Components

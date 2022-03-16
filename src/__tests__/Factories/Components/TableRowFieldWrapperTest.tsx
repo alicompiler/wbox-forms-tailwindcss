@@ -44,7 +44,7 @@ describe('TableRowFieldWrapper', () => {
     it('should use defaults', async function () {
         const classNameBuilderMock = mock<ClassNameBuilder>();
         classNameBuilderMock.build.mockReturnValue('default-class-name');
-        
+
         render(<DefaultsProvider value={{
             ...defaults,
             classNameBuilder: () => classNameBuilderMock,

@@ -4,14 +4,14 @@ import Checkbox from "../Components/Checkbox";
 import RadioButton from "../Components/RadioButton";
 import TextArea from "../Components/TextArea";
 import {DateField, DateTimeField, PasswordField, TextField, TimeField} from "../Components/TextField";
-import {useCallback} from "react";
 
 class CheckValidator implements FieldValidator {
     validate(value: any, rules: any): boolean {
-        console.log('validate' , value);
+        console.log('validate', value);
         return value === true;
     }
 }
+
 const checkValidator = () => {
     console.log('callback function');
     return new CheckValidator();

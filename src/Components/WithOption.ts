@@ -1,8 +1,8 @@
 export interface Option {
-    text : string;
-    value : any;
+    text: string;
+    value: any;
 }
 
 export interface WithOptions {
-    options : Option[];
+    options: Option[];
 }
