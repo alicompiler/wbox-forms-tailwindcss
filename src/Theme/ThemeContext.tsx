@@ -1,8 +1,8 @@
 import React, {useContext} from "react";
-import {solidTheme} from "./SolidTheme";
 import {Theme} from "./Theme";
+import {simpleTheme} from "./SimpleTheme";
 
-export const ThemeContext = React.createContext<Theme>(solidTheme);
+export const ThemeContext = React.createContext<Theme>(simpleTheme);
 
 export const ThemeProvider = ThemeContext.Provider;
 
