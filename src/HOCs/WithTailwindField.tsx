@@ -17,7 +17,7 @@ export interface WrappedFieldProps {
 
 interface TailwindFieldOptions {
     classNameBuilder: ClassNameBuilder;
-    theme : Theme;
+    theme: Theme;
     inputProps: any;
     placeholder?: string;
     dataTestId: string;
@@ -27,7 +27,7 @@ interface TailwindFieldOptions {
 export function withTailwindField<TProps extends FieldProps & WithFieldProps>(
     Component: React.ComponentType<TProps & WithTailwindFieldProps>,
     type: string = "text",
-    defaultProps : Partial<FieldProps> = {},
+    defaultProps: Partial<FieldProps> = {},
     classNameBuilder: ClassNameBuilder = new DefaultClassNameBuilder(),
 ) {
     type ReceivedProps = Omit<TProps, keyof WithTailwindFieldProps> & WrappedFieldProps;
@@ -42,5 +42,5 @@ export function withTailwindField<TProps extends FieldProps & WithFieldProps>(
         };
         return <Component {...(props as TProps)} tailwindOptions={options}/>
     }
-    return withField(FieldComponent , defaultInitializeFunc , defaultProps);
+    return withField(FieldComponent, defaultInitializeFunc, defaultProps);
 }

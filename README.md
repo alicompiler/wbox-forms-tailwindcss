@@ -20,7 +20,7 @@ X Key Value Form Factory
 X Fields Order
 X Code Cleanup
 X Example Cleanup
-* Test New Code
+X Test New Code
 * All Code Cleanup Round
 * Tests Cleanup
 * Export Components

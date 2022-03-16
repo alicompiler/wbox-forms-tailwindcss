@@ -4,7 +4,7 @@ import {WithOptions} from "./WithOption";
 import {ChoiceBoxBase, Orientation} from "./ChoiceBoxBase";
 import {withTailwindField, WithTailwindFieldProps} from "../HOCs/WithTailwindField";
 import {useDefaults} from "../Defaults/DefaultsContext";
-import {orientedWithStateBasedClassNameSelector, stateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
+import {stateBasedClassNameSelector} from "../Utils/ClassNameBuilder";
 import React from "react";
 
 export interface RadioButtonProps extends BaseFieldProps, WithOptions, WithTailwindFieldProps {
