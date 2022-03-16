@@ -24,6 +24,10 @@ interface TailwindFieldOptions {
     type: string;
 }
 
+export function getFieldTestId(name: string) {
+    return `wbox-field-${name}`;
+}
+
 export function withTailwindField<TProps extends FieldProps & WithFieldProps>(
     Component: React.ComponentType<TProps & WithTailwindFieldProps>,
     type: string = "text",
@@ -34,7 +38,7 @@ export function withTailwindField<TProps extends FieldProps & WithFieldProps>(
     const FieldComponent = (props: ReceivedProps) => {
         const theme = useTheme();
         const options: TailwindFieldOptions = {
-            dataTestId: `wbox-field-${props.name}`,
+            dataTestId: getFieldTestId(props.name),
             inputProps: props.inputProps ?? {},
             theme: theme as any,
             classNameBuilder: classNameBuilder,
