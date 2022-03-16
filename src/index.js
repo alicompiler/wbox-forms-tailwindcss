@@ -30,7 +30,7 @@ function App() {
         }
     }, []);
 
-    const [theme, setTheme] = useState(unStyledTheme);
+    const [theme, setTheme] = useState(simpleTheme);
 
     return <div className={'p-8'}>
 

@@ -35,7 +35,6 @@ the supported elements are :
         <TextArea name={'message'} rows={5} placeholder={'Message...'}/>
     </Form>
 
-
 ### Theme
 
 we provide four types of themes:
@@ -45,8 +44,9 @@ we provide four types of themes:
 * Solid
 * Underlined
 
-by default **Simple Theme** is used, you can change theme by wrapping the form (or the entire application) 
-with `ThemeProvider` component. you also can define your own theme by creating a theme object that applies to the `Theme` interface.
+by default **Simple Theme** is used, you can change theme by wrapping the form (or the entire application)
+with `ThemeProvider` component. you also can define your own theme by creating a theme object that applies to
+the `Theme` interface.
 
     import { simpleTheme, solidTheme, unStyledTheme, underlinedTheme, Theme } from "wbox-forms-tailwwindcss";    
 
@@ -56,11 +56,9 @@ with `ThemeProvider` component. you also can define your own theme by creating a
         <App />
     <ThemeProvider>
 
-
 ### Factories
 
 we provide two form factories that you can use to help you build forms from configuration only
-
 
     const simpleFormFactory = new SimpleFormFactory();
     const configuration = {
@@ -90,13 +88,10 @@ we provide two form factories that you can use to help you build forms from conf
 
     return simpleFormFactory.create(configuration);
 
-
-we provide: 
+we provide:
 
 * SimpleFormFactory (checkout the examples)
 * TableLayoutFormFactory (checkout the examples)
-
-
 
 ### Defaults
 
