@@ -1,13 +1,13 @@
 {
   "name": "wbox-forms-tailwindcss",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "dependencies": {
     "wbox-forms": "^0.1.5"
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "tsc --noEmit false && rm -rf ./dist/__examples",
     "test": "craco test",
     "eject": "react-scripts eject",
     "build:styles": "npx tailwindcss -i src/tailwind.css -o public/index.css",
