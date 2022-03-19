@@ -8,6 +8,7 @@
     "wbox-forms": "^0.2.2"
   },
   "scripts": {
+    "prestart": "npm run build:styles",
     "start": "craco start",
     "build": "tsc --noEmit false && rm -rf ./dist/__examples",
     "test": "craco test",
