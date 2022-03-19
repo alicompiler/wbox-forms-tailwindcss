@@ -1,6 +1,8 @@
 {
   "name": "wbox-forms-tailwindcss",
-  "version": "0.2.0",
+  "version": "0.2.1",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "private": false,
   "dependencies": {
     "wbox-forms": "^0.2.2"
