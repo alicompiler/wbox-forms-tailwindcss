@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "private": false,
   "dependencies": {
-    "wbox-forms": "^0.1.5"
+    "wbox-forms": "^0.2.2"
   },
   "scripts": {
     "start": "craco start",

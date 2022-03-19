@@ -52,7 +52,7 @@ export function LayoutExample() {
         }
     };
 
-    const tableLayoutConfiguration: FormConfiguration<FieldTypeMap, FieldConfig, TableLayoutExtraOptions> = {
+    const tableLayoutConfiguration: FormConfiguration<FieldConfig, TableLayoutExtraOptions> = {
         ...configuration,
         extraOptions: {
             ...configuration.extraOptions,
@@ -62,7 +62,7 @@ export function LayoutExample() {
         }
     };
 
-    const simpleConfiguration: FormConfiguration<FieldTypeMap, FieldConfig, ExtraOptionsBase> = {
+    const simpleConfiguration: FormConfiguration<FieldConfig, ExtraOptionsBase> = {
         ...configuration
     }
 

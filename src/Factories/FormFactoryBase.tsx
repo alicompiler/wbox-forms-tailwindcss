@@ -18,7 +18,7 @@ export interface ButtonOptions {
     className?: ClassName;
 }
 
-export abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> implements FormFactory<FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>> {
+export abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> implements FormFactory<FormConfiguration<FieldConfig, TExtraOptions>> {
 
     protected readonly fieldTypeMap: FieldTypeMap;
 
@@ -27,7 +27,7 @@ export abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> im
     }
 
 
-    create(configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>): React.ReactElement {
+    create(configuration: FormConfiguration<FieldConfig, TExtraOptions>): React.ReactElement {
         const formProps = configuration.formConfig;
         return <Form {...formProps}>
             {
@@ -40,7 +40,7 @@ export abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> im
     }
 
 
-    protected renderFields(configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>): React.ReactElement | React.ReactElement[] {
+    protected renderFields(configuration: FormConfiguration<FieldConfig, TExtraOptions>): React.ReactElement | React.ReactElement[] {
         const fields = configuration.fieldConfig;
         const keys = Object.keys(fields);
         return keys.map((key, index) => {
@@ -55,14 +55,14 @@ export abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> im
         });
     }
 
-    protected abstract renderField(name: string, field: ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>, index: number, fieldsCount: number): ReactElement;
+    protected abstract renderField(name: string, field: ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldConfig, TExtraOptions>, index: number, fieldsCount: number): ReactElement;
 
     protected getFieldElement(type: keyof FieldTypeMap, fieldProps: FieldConfig) {
         const FieldComponent = this.fieldTypeMap[type];
         return <FieldComponent key={fieldProps.name} {...fieldProps} />;
     }
 
-    protected renderButton(configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>): any {
+    protected renderButton(configuration: FormConfiguration<FieldConfig, TExtraOptions>): any {
         return <LayoutButton position={configuration.extraOptions!.button.position}
                              text={configuration.extraOptions!.button.text}
                              className={configuration.extraOptions!.button.className}

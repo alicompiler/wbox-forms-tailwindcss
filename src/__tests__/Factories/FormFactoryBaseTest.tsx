@@ -11,7 +11,7 @@ configure({adapter: new Adapter()});
 
 
 class DummyFactory extends FormFactoryBase<any> {
-    protected renderField(name: string, field: React.ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldTypeMap, FieldConfig>, index: number, fieldsCount: number): React.ReactElement {
+    protected renderField(name: string, field: React.ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldConfig>, index: number, fieldsCount: number): React.ReactElement {
         return <span data-testid={name}>{fieldConfig.label}</span>
     }
 }

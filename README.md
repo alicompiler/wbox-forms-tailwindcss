@@ -15,6 +15,12 @@ the supported elements are :
 - Time
 - DateTime
 
+### Installation
+
+    npm install wbox-forms-tailwindcss
+    // or using yarn
+    yarn add wbox-forms-tailwindcss
+
 ### Example
 
     const colors = [
