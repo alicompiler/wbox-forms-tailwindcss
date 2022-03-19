@@ -1,0 +1,6 @@
+justify-center
+justify-end
+justify-start
+items-center
+items-end
+items-start
