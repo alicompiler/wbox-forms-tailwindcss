@@ -17,5 +17,5 @@ export function ChoiceBoxBase(props) {
     var inputClassName = classNameBuilder.build(undefined, orientedWithStateBasedClassNameSelector(classNames.input, orientation, field));
     var spaceClassName = classNameBuilder.build(undefined, orientedWithStateBasedClassNameSelector(classNames.space, orientation, field));
     var textClassName = classNameBuilder.build(undefined, stateBasedClassNameSelector(classNames.optionText, field));
-    return _jsxs("label", __assign({ className: labelClassName }, { children: [_jsx("input", { type: type, id: dataTestId, name: name, className: inputClassName, checked: checked, value: value, onChange: handleChange }, void 0), _jsx("span", { className: spaceClassName }, void 0), _jsx("span", __assign({ className: textClassName }, { children: text }), void 0)] }), void 0);
+    return _jsxs("label", __assign({ className: labelClassName }, { children: [_jsx("input", { type: type, id: dataTestId, name: name, className: inputClassName, checked: checked, value: value, onChange: handleChange }), _jsx("span", { className: spaceClassName }), _jsx("span", __assign({ className: textClassName }, { children: text }))] }));
 }

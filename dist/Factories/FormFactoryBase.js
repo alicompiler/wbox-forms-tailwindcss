@@ -20,7 +20,7 @@ var FormFactoryBase = /** @class */ (function () {
     }
     FormFactoryBase.prototype.create = function (configuration) {
         var formProps = configuration.formConfig;
-        return _jsxs(Form, __assign({}, formProps, { children: [this.renderFields(configuration), this.renderButton(configuration)] }), void 0);
+        return _jsxs(Form, __assign({}, formProps, { children: [this.renderFields(configuration), this.renderButton(configuration)] }));
     };
     FormFactoryBase.prototype.renderFields = function (configuration) {
         var _this = this;
@@ -38,7 +38,7 @@ var FormFactoryBase = /** @class */ (function () {
         return _jsx(FieldComponent, __assign({}, fieldProps), fieldProps.name);
     };
     FormFactoryBase.prototype.renderButton = function (configuration) {
-        return _jsx(LayoutButton, { position: configuration.extraOptions.button.position, text: configuration.extraOptions.button.text, className: configuration.extraOptions.button.className, classNameBuilder: configuration.extraOptions.classNameBuilder }, void 0);
+        return _jsx(LayoutButton, { position: configuration.extraOptions.button.position, text: configuration.extraOptions.button.text, className: configuration.extraOptions.button.className, classNameBuilder: configuration.extraOptions.classNameBuilder });
     };
     return FormFactoryBase;
 }());

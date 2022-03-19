@@ -16,7 +16,7 @@ export function TailwindInputField(props) {
     var tailwindOptions = props.tailwindOptions;
     var classNameBuilder = tailwindOptions.classNameBuilder, theme = tailwindOptions.theme;
     var className = classNameBuilder.build(props.className, stateBasedClassNameSelector(theme.inputClassName, props.field));
-    return _jsx("input", __assign({ name: props.name, "data-testid": tailwindOptions.dataTestId, className: className, placeholder: props.placeholder, type: tailwindOptions.type }, tailwindOptions.inputProps, { value: props.field.value, onChange: props.handleChange }), void 0);
+    return _jsx("input", __assign({ name: props.name, "data-testid": tailwindOptions.dataTestId, className: className, placeholder: props.placeholder, type: tailwindOptions.type }, tailwindOptions.inputProps, { value: props.field.value, onChange: props.handleChange }));
 }
 export var TextField = withTailwindField(TailwindInputField);
 export var PasswordField = withTailwindField(TailwindInputField, "password");

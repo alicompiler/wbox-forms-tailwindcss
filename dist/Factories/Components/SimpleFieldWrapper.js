@@ -19,5 +19,5 @@ export function SimpleFieldWrapper(props) {
     var theme = useTheme();
     var classNameBuilder = (_a = props.classNameBuilder) !== null && _a !== void 0 ? _a : defaults.classNameBuilder();
     var labelClassName = classNameBuilder.build(props.labelClassName, theme.label);
-    return _jsx("div", __assign({ className: '__wbox-tailwind-simple-layout-field-wrapper py-2' }, { children: _jsxs("label", __assign({ "data-testid": DATA_TEST_ID_SIMPLE_FIELD_LABEL, className: labelClassName }, { children: [props.label, props.field] }), void 0) }), void 0);
+    return _jsx("div", __assign({ className: '__wbox-tailwind-simple-layout-field-wrapper py-2' }, { children: _jsxs("label", __assign({ "data-testid": DATA_TEST_ID_SIMPLE_FIELD_LABEL, className: labelClassName }, { children: [props.label, props.field] })) }));
 }

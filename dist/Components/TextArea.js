@@ -14,6 +14,6 @@ import { withTailwindField } from "../HOCs/WithTailwindField";
 import { stateBasedClassNameSelector } from "../Utils/ClassNameBuilder";
 function TextArea(props) {
     var tailwindOptions = props.tailwindOptions;
-    return _jsx("textarea", __assign({ name: props.name, "data-testid": tailwindOptions.dataTestId, className: tailwindOptions.classNameBuilder.build(props.className, stateBasedClassNameSelector(tailwindOptions.theme.textAreaClassName, props.field)), rows: props.rows, placeholder: props.placeholder }, tailwindOptions.inputProps, { value: props.field.value, onChange: props.handleChange }), void 0);
+    return _jsx("textarea", __assign({ name: props.name, "data-testid": tailwindOptions.dataTestId, className: tailwindOptions.classNameBuilder.build(props.className, stateBasedClassNameSelector(tailwindOptions.theme.textAreaClassName, props.field)), rows: props.rows, placeholder: props.placeholder }, tailwindOptions.inputProps, { value: props.field.value, onChange: props.handleChange }));
 }
 export default withTailwindField(TextArea, "textarea");

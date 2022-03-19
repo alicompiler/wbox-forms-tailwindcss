@@ -1,8 +1,8 @@
-import { FieldProps } from "wbox-forms";
 import React from "react";
 import { ClassName, ClassNameBuilder } from "../Utils/ClassNameBuilder";
 import { Theme } from "../Theme/Theme";
 import { WithFieldProps } from "wbox-forms/dist/Field/HOCs";
+import { FieldProps } from "wbox-forms";
 export interface WithTailwindFieldProps {
     tailwindOptions: TailwindFieldOptions;
 }

@@ -62,7 +62,7 @@ export function LayoutButton(props) {
     var buttonClassName = classNameBuilder.build(props.className, theme.button);
     var additionalClassName = position === "fullwidth" ? "w-full" : "";
     var className = "".concat(buttonClassName, " ").concat(additionalClassName);
-    return _jsx("div", __assign({ "data-testid": DATA_TEST_ID_LAYOUT_BUTTON_WRAPPER, className: "flex p-2 ".concat(justify, " __wbox-tailwind-button-wrapper") }, { children: _jsx(Button, { render: function (serviceFactory) { return _jsx(InnerButton, { serviceFactory: serviceFactory, className: className, text: props.text }, void 0); } }, void 0) }), void 0);
+    return _jsx("div", __assign({ "data-testid": DATA_TEST_ID_LAYOUT_BUTTON_WRAPPER, className: "flex p-2 ".concat(justify, " __wbox-tailwind-button-wrapper") }, { children: _jsx(Button, { render: function (serviceFactory) { return _jsx(InnerButton, { serviceFactory: serviceFactory, className: className, text: props.text }); } }) }));
 }
 function InnerButton(_a) {
     var _this = this;
@@ -81,5 +81,5 @@ function InnerButton(_a) {
             }
         });
     }); }, [serviceFactory]);
-    return _jsx("button", __assign({ "data-testid": DATA_TEST_ID_LAYOUT_BUTTON, onClick: onClick, className: className }, { children: text }), void 0);
+    return _jsx("button", __assign({ "data-testid": DATA_TEST_ID_LAYOUT_BUTTON, onClick: onClick, className: className }, { children: text }));
 }

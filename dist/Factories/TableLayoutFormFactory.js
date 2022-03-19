@@ -22,7 +22,7 @@ var TableLayoutFormFactory = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TableLayoutFormFactory.prototype.renderField = function (name, field, fieldConfig, configuration, index, fieldsCount) {
-        return _jsx(TableRowFieldWrapper, { field: field, label: fieldConfig.label, labelClassName: fieldConfig.labelClassName, labelWidth: configuration.extraOptions.labelWidth, labelAlignment: configuration.extraOptions.labelAlignment, spaceWidth: configuration.extraOptions.spaceWidth, displayDivider: configuration.extraOptions.showDivider && index !== (fieldsCount - 1), classNameBuilder: configuration.extraOptions.classNameBuilder }, void 0);
+        return _jsx(TableRowFieldWrapper, { field: field, label: fieldConfig.label, labelClassName: fieldConfig.labelClassName, labelWidth: configuration.extraOptions.labelWidth, labelAlignment: configuration.extraOptions.labelAlignment, spaceWidth: configuration.extraOptions.spaceWidth, displayDivider: configuration.extraOptions.showDivider && index !== (fieldsCount - 1), classNameBuilder: configuration.extraOptions.classNameBuilder });
     };
     return TableLayoutFormFactory;
 }(FormFactoryBase));

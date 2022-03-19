@@ -10,10 +10,10 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { withField } from "wbox-forms";
 import { DefaultClassNameBuilder } from "../Utils/ClassNameBuilder";
 import { useTheme } from "../Theme/ThemeContext";
 import { defaultInitializeFunc } from "wbox-forms/dist/Field/Helpers";
+import { withField } from "wbox-forms";
 export function getFieldTestId(name) {
     return "wbox-field-".concat(name);
 }
@@ -31,7 +31,7 @@ export function withTailwindField(Component, type, defaultProps, classNameBuilde
             classNameBuilder: classNameBuilder,
             type: type
         };
-        return _jsx(Component, __assign({}, props, { tailwindOptions: options }), void 0);
+        return _jsx(Component, __assign({}, props, { tailwindOptions: options }));
     };
     return withField(FieldComponent, defaultInitializeFunc, defaultProps);
 }

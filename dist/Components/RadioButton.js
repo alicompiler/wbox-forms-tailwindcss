@@ -22,7 +22,7 @@ function RadioButton(props) {
     var orientation = (_a = props.orientation) !== null && _a !== void 0 ? _a : defaults.radioButtonOrientation;
     var wrapperClassName = tailwindOptions.classNameBuilder.build(undefined, stateBasedClassNameSelector(tailwindOptions.theme.radio.wrapper, props.field));
     return _jsx("div", __assign({ className: wrapperClassName }, { children: props.options.map(function (option, index) {
-            return _jsxs(React.Fragment, { children: [_jsx(ChoiceBoxBase, { name: props.name, type: "radio", classNames: tailwindOptions.theme.radio, classNameBuilder: tailwindOptions.classNameBuilder, orientation: orientation, field: props.field, dataTestId: tailwindOptions.dataTestId, checked: props.field.value === option.value, value: option.value, handleChange: props.handleChange, text: option.text }, void 0), index < props.options.length - 1 && _jsx("span", { className: 'inline-block w-4' }, void 0)] }, index);
-        }) }), void 0);
+            return _jsxs(React.Fragment, { children: [_jsx(ChoiceBoxBase, { name: props.name, type: "radio", classNames: tailwindOptions.theme.radio, classNameBuilder: tailwindOptions.classNameBuilder, orientation: orientation, field: props.field, dataTestId: tailwindOptions.dataTestId, checked: props.field.value === option.value, value: option.value, handleChange: props.handleChange, text: option.text }), index < props.options.length - 1 && _jsx("span", { className: 'inline-block w-4' })] }, index);
+        }) }));
 }
 export default withTailwindField(RadioButton);

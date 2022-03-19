@@ -22,7 +22,7 @@ var SimpleFormFactory = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     SimpleFormFactory.prototype.renderField = function (name, field, fieldConfig, configuration) {
-        return _jsx(SimpleFieldWrapper, { field: field, classNameBuilder: configuration.extraOptions.classNameBuilder, labelClassName: fieldConfig.labelClassName, label: fieldConfig.label }, void 0);
+        return _jsx(SimpleFieldWrapper, { field: field, classNameBuilder: configuration.extraOptions.classNameBuilder, labelClassName: fieldConfig.labelClassName, label: fieldConfig.label });
     };
     return SimpleFormFactory;
 }(FormFactoryBase));

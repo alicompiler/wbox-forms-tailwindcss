@@ -16,12 +16,12 @@ export interface ButtonOptions {
     position?: ButtonPosition;
     className?: ClassName;
 }
-export declare abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> implements FormFactory<FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>> {
+export declare abstract class FormFactoryBase<TExtraOptions extends ExtraOptionsBase> implements FormFactory<FormConfiguration<FieldConfig, TExtraOptions>> {
     protected readonly fieldTypeMap: FieldTypeMap;
     constructor();
-    create(configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>): React.ReactElement;
-    protected renderFields(configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>): React.ReactElement | React.ReactElement[];
-    protected abstract renderField(name: string, field: ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>, index: number, fieldsCount: number): ReactElement;
+    create(configuration: FormConfiguration<FieldConfig, TExtraOptions>): React.ReactElement;
+    protected renderFields(configuration: FormConfiguration<FieldConfig, TExtraOptions>): React.ReactElement | React.ReactElement[];
+    protected abstract renderField(name: string, field: ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldConfig, TExtraOptions>, index: number, fieldsCount: number): ReactElement;
     protected getFieldElement(type: keyof FieldTypeMap, fieldProps: FieldConfig): JSX.Element;
-    protected renderButton(configuration: FormConfiguration<FieldTypeMap, FieldConfig, TExtraOptions>): any;
+    protected renderButton(configuration: FormConfiguration<FieldConfig, TExtraOptions>): any;
 }

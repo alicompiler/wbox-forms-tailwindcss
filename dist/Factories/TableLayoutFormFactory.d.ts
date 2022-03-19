@@ -1,4 +1,4 @@
-import { FieldProps, FieldTypeMap, FormConfiguration } from "wbox-forms";
+import { FieldProps, FormConfiguration } from "wbox-forms";
 import { ClassName } from "../Utils/ClassNameBuilder";
 import React from "react";
 import { ExtraOptionsBase, FormFactoryBase } from "./FormFactoryBase";
@@ -15,6 +15,6 @@ export interface TableLayoutExtraOptions extends ExtraOptionsBase {
     labelWidth: number;
 }
 export declare class TableLayoutFormFactory extends FormFactoryBase<TableLayoutExtraOptions> {
-    protected renderField(name: string, field: React.ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldTypeMap, FieldConfig, TableLayoutExtraOptions>, index: number, fieldsCount: number): React.ReactElement;
+    protected renderField(name: string, field: React.ReactElement, fieldConfig: FieldConfig, configuration: FormConfiguration<FieldConfig, TableLayoutExtraOptions>, index: number, fieldsCount: number): React.ReactElement;
 }
 export {};

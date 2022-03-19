@@ -8,6 +8,6 @@ function Checkbox(props) {
     var tailwindOptions = props.tailwindOptions;
     var defaults = useDefaults();
     var orientation = (_a = props.orientation) !== null && _a !== void 0 ? _a : defaults.checkboxOrientation;
-    return _jsx(ChoiceBoxBase, { name: props.name, dataTestId: tailwindOptions.dataTestId, type: tailwindOptions.type, classNames: tailwindOptions.theme.checkboxClassName, classNameBuilder: tailwindOptions.classNameBuilder, orientation: orientation, field: props.field, checked: props.field.value, value: props.field.value, handleChange: props.handleChange, text: (_b = props.text) !== null && _b !== void 0 ? _b : '' }, void 0);
+    return _jsx(ChoiceBoxBase, { name: props.name, dataTestId: tailwindOptions.dataTestId, type: tailwindOptions.type, classNames: tailwindOptions.theme.checkboxClassName, classNameBuilder: tailwindOptions.classNameBuilder, orientation: orientation, field: props.field, checked: props.field.value, value: props.field.value, handleChange: props.handleChange, text: (_b = props.text) !== null && _b !== void 0 ? _b : '' });
 }
 export default withTailwindField(Checkbox, "checkbox", { valueSelector: checkboxValueSelector });

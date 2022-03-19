@@ -19,6 +19,6 @@ function SelectField(props) {
     var optionClassName = classNameBuilder.build(props.className, stateBasedClassNameSelector(theme.selectOptionClassName, props.field));
     return _jsx("select", __assign({ name: props.name, "data-testid": tailwindOptions.dataTestId, className: selectClassName, placeholder: props.placeholder }, tailwindOptions.inputProps, { value: props.field.value, onChange: props.handleChange }, { children: props.options.map(function (option, index) {
             return _jsx("option", __assign({ className: optionClassName, value: option.value }, { children: option.text }), index);
-        }) }), void 0);
+        }) }));
 }
 export default withTailwindField(SelectField, "select");
